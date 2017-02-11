@@ -24,7 +24,7 @@ class TFIDF():
             raise ValueError('arg \'method\' need be input')
 
         read_from_annotation = open(file, 'r')
-        print(file)
+        #print(file)
         collection = []
         document = []
         time = ''
@@ -95,7 +95,7 @@ class TFIDF():
             # print(documents)
             flag = 0
             time = time_seriase.pop()
-            print(time)
+            #print(time)
             WriteToTxt.writelines(time+'\n')
             for document in documents:
                 # print(document)
@@ -114,17 +114,17 @@ class TFIDF():
                         # print(dic[j[0]])
                         rankList.append((dic[j[0]], j[1]))
                     if flag % 6 == 0:
-                        print('AllUser')
+                        #print('AllUser')
                         WriteToTxt.writelines('AllUser\n')
                     if flag % 6 == 2:
-                        print('PowerUser')
+                        #print('PowerUser')
                         WriteToTxt.writelines('PowerUser\n')
                     if flag % 6 == 4:
-                        print('NormalUser')
+                        #print('NormalUser')
                         WriteToTxt.writelines('NormalUser\n')
-                    print(rankList)
+                    #print(rankList)
                     WriteToTxt.writelines(str(rankList))
-                    print('')
+                    #print('')
                     WriteToTxt.writelines('\n\n')
                     flag += 1
         return 0
@@ -135,53 +135,77 @@ if __name__ == '__main__':
     collection, time = tfidf.loading_document_set(type='collection')
     model, dic = tfidf.tfidf_construct(collection)
     documentset, time_seriase = tfidf.loading_document_set(type='document', method='HITS')
+    print(tfidf.FileName+' '+tfidf.method)
+    print(time_seriase)
     tfidf.tfidf_weighting(documentset, dic)
 
     documentset, time_seriase = tfidf.loading_document_set(type='document', method='MT')
+    print(tfidf.FileName + ' ' + tfidf.method)
+    print(time_seriase)
     tfidf.tfidf_weighting(documentset, dic)
 
     tfidf = TFIDF('3_06')
     collection, time = tfidf.loading_document_set(type='collection')
     model, dic = tfidf.tfidf_construct(collection)
     documentset, time_seriase = tfidf.loading_document_set(type='document', method='HITS')
+    print(tfidf.FileName + ' ' + tfidf.method)
+    print(time_seriase)
     tfidf.tfidf_weighting(documentset, dic)
 
     documentset, time_seriase = tfidf.loading_document_set(type='document', method='MT')
+    print(tfidf.FileName + ' ' + tfidf.method)
+    print(time_seriase)
     tfidf.tfidf_weighting(documentset, dic)
 
     tfidf = TFIDF('7_09')
     collection, time = tfidf.loading_document_set(type='collection')
     model, dic = tfidf.tfidf_construct(collection)
     documentset, time_seriase = tfidf.loading_document_set(type='document', method='HITS')
+    print(tfidf.FileName + ' ' + tfidf.method)
+    print(time_seriase)
     tfidf.tfidf_weighting(documentset, dic)
 
     documentset, time_seriase = tfidf.loading_document_set(type='document', method='MT')
+    print(tfidf.FileName + ' ' + tfidf.method)
+    print(time_seriase)
     tfidf.tfidf_weighting(documentset, dic)
 
     tfidf = TFIDF('7_10')
     collection, time = tfidf.loading_document_set(type='collection')
     model, dic = tfidf.tfidf_construct(collection)
     documentset, time_seriase = tfidf.loading_document_set(type='document', method='HITS')
+    print(tfidf.FileName + ' ' + tfidf.method)
+    print(time_seriase)
     tfidf.tfidf_weighting(documentset, dic)
 
     documentset, time_seriase = tfidf.loading_document_set(type='document', method='MT')
+    print(tfidf.FileName + ' ' + tfidf.method)
+    print(time_seriase)
     tfidf.tfidf_weighting(documentset, dic)
 
     tfidf = TFIDF('7_13')
     collection, time = tfidf.loading_document_set(type='collection')
     model, dic = tfidf.tfidf_construct(collection)
     documentset, time_seriase = tfidf.loading_document_set(type='document', method='HITS')
+    print(tfidf.FileName + ' ' + tfidf.method)
+    print(time_seriase)
     tfidf.tfidf_weighting(documentset, dic)
 
     documentset, time_seriase = tfidf.loading_document_set(type='document', method='MT')
+    print(tfidf.FileName + ' ' + tfidf.method)
+    print(time_seriase)
     tfidf.tfidf_weighting(documentset, dic)
 
     tfidf = TFIDF('7_14')
     collection, time = tfidf.loading_document_set(type='collection')
     model, dic = tfidf.tfidf_construct(collection)
     documentset, time_seriase = tfidf.loading_document_set(type='document', method='HITS')
+    print(tfidf.FileName + ' ' + tfidf.method)
+    print(time_seriase)
     tfidf.tfidf_weighting(documentset, dic)
 
     documentset, time_seriase = tfidf.loading_document_set(type='document', method='MT')
+    print(tfidf.FileName + ' ' + tfidf.method)
+    print(time_seriase)
     tfidf.tfidf_weighting(documentset, dic)
 

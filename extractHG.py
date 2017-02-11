@@ -8,7 +8,7 @@ def tuplemerge( list1=[], list2=[]):  # (B, S)
         for item2 in list1:
             if item[0] in item2:
                 list.append((item[0], item[1] + item2[1]))
-                print(item)
+                #print(item)
                 list2.remove(item)
                 list1.remove(item2)
                 break
@@ -46,7 +46,8 @@ class extractHG():
             templist = []
             for time2 in time:
                 a = str(int((time2[1]+starttime[1]) / 60+time2[0]+starttime[0]))
-                templist.append((a if len(a) > 1 else '0'+a)+':'+str((time2[1]+starttime[1]) % 60))
+                b = str((time2[1]+starttime[1]) % 60)
+                templist.append((a if len(a) > 1 else '0'+a)+':'+(b if len(b) > 1 else '0'+b))
             highlighttimes.append(templist)
         for highlighttime in highlighttimes:
             #print(highlighttimes)
