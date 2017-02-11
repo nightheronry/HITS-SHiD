@@ -1,0 +1,163 @@
+守門
+Goalkeeper
+防守
+Defender
+替補
+Substitute
+替補
+Substitution
+警告
+Caution
+罰出場
+Send off
+驅離出場
+Explusion
+基本裝備
+Basic Equipment
+重新比賽
+Restart of play
+助理裁判
+Assistant referee
+受傷球員
+Injured player
+延誤時間
+Wasting time
+罰球點球
+Penalty kick
+開球
+Kick-off
+墜球
+Drop ball
+進球
+Goal scored
+勝隊
+Winning team
+競賽規程
+Competition Rule
+越位位置
+Offside position
+非越位位置
+Onside position
+犯規
+Offence
+沒犯規
+No offence
+直接自由球
+Direct free kick
+間接自由球
+Indirect free kick
+踢
+kick
+絆
+Trip
+跳
+Jump
+衝撞
+Charge
+毆打
+Strike
+鏟球
+Tackle
+抓拉
+Hold
+異議
+Dissent
+黃牌
+Yellow card
+嚴重犯規
+Serious foul play
+紅牌
+Red card
+粗魯行為
+Violent conduct
+技術區域
+Technical area
+信號
+Signal
+違規
+罰則
+Infringement
+Sanction
+擲球入場
+Throw-in
+球門球
+Goal kick
+角球
+Corner kick
+加時比賽
+Extra time
+偽裝
+Simulation
+加時
+Additional time
+開球
+Kick-off
+選擇場區
+Choice of ends
+那一邊
+Which end？
+主隊
+Home team
+客隊
+Visitors
+半場時間
+Half-time
+上半場
+First half
+Draw your stockings back
+未得分
+Disallowed score
+終場時間
+Full-time
+繼續比賽
+Play on
+得益
+Advantage
+危險動作
+Dangerous play
+絆
+tripped
+拉人
+holding
+犯規
+Foul play
+你推人
+You were pushing
+球必須不動
+The ball must be stationary
+不要推人
+Stop pushing
+退後十碼
+Go back 10 yards
+重踢
+Take the kick again
+退到十碼線
+Go back to the ten yard line
+不公平衝撞
+Unfair charge
+阻擋
+Obstruction
+重擲球
+Take the throw again
+受傷
+injured
+越位
+Offside
+得分
+The score
+和局
+Draw
+頭頂球
+Heading
+傳
+Pass
+競賽
+Competition
+地點
+Venue
+裁判考核員
+Referee Assessor
+第四裁判
+Fourth official
+競賽規程
+Competition rule
