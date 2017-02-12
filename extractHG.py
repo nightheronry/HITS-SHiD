@@ -102,15 +102,7 @@ class extractHG():
         return 0
 
 if __name__ == '__main__':
-    #  3_06
-    ex = extractHG('3_06')
-    #ex.timeModify([58, 62, 59, 126, 184, 135, 54, 125, 55, 49, 63])
-    ex.timeModify([[58, 59], [62, 63], [126], [184], [135], [54], [125], [55], [49]])
-    ex.extractAnnotaton(0, 'HITS')
-    # 58->37:20
-    #ex.timeModify([58, 62, 59, 48, 55, 19, 54, 49, 51, 50, 63, 13, 20, 24, 44, 52])
-    ex.timeModify([[58, 59], [62, 63], [48, 49], [54, 55], [19], [50, 51, 52], [13], [20], [24], [44]])
-    ex.extractAnnotaton(0, 'MT')
+
 
     #  3_05
     ex = extractHG('3_05')
@@ -122,6 +114,17 @@ if __name__ == '__main__':
     ex.timeModify([[53, 54], [75], [23], [83], [165]])
 
     ex.extractAnnotaton(0, 'MT')
+
+    #  3_06
+    ex = extractHG('3_06')
+    # ex.timeModify([58, 62, 59, 126, 184, 135, 54, 125, 55, 49, 63])
+    ex.timeModify([[58, 59], [62, 63], [125, 126], [184], [135], [54, 55], [49]])
+    ex.extractAnnotaton(0, 'HITS')
+    # 58->37:20
+    # ex.timeModify([58, 62, 59, 48, 55, 19, 54, 49, 51, 50, 63, 13, 20, 24, 44, 52])
+    ex.timeModify([[58, 59], [62, 63], [48, 49, 50, 51, 52], [54, 55], [19, 20], [13], [24], [44]])
+    ex.extractAnnotaton(0, 'MT')
+
 
     # 7_09
     ex = extractHG('7_09')
