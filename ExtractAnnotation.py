@@ -168,7 +168,7 @@ class ExtractAnnotation:
         return 0
 
     def PowerUser(self):
-        fr = open("/PowerUser/PowerUser_" + self.FileName+'.txt')
+        fr = open("PowerUser/PowerUser_" + self.FileName+'.txt')
         userlist = []
         for user in fr:
             userlist.append(str(user).splitlines()[0])
