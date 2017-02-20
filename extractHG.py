@@ -48,6 +48,7 @@ class extractHG():
         ReadFromAnnotation = open('Annotationlist/Annotationlist_'+self.FileName+'.txt', 'r')
         WriteToTxt = open('Annotationlist/' + merged_directory+exportfile+'/HighlightAnnotation_'+self.FileName+'_'+exportfile+'.txt', 'w')
         starttime = ReadFromAnnotation.readline().rstrip().split(':')
+        print(starttime)
         starttime[0] = int(starttime[0])
         starttime[1] = int(starttime[1])
         highlighttimes = []
@@ -58,7 +59,7 @@ class extractHG():
                 b = str((time2[1]+starttime[1]) % 60)
                 templist.append((a if len(a) > 1 else '0'+a)+':'+(b if len(b) > 1 else '0'+b))
             highlighttimes.append(templist)
-        if not self.merged:
+        if self.merged:
             print(highlighttimes)
         for highlighttime in highlighttimes:
 
