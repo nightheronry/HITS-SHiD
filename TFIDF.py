@@ -3,8 +3,8 @@
 from gensim import corpora, models
 import ast
 
-class TFIDF():
 
+class TFIDF():
     def __init__(self, fileName):
         self.FileName = fileName
         self.collection = []
@@ -17,14 +17,14 @@ class TFIDF():
         if not type:
             raise ValueError('arg \'type\' need be input as collection or document only.')
         elif type == 'collection':
-            file = 'Annotationlist/Annotationlist_'+self.FileName+'.txt'
+            file = 'Annotationlist/Annotationlist_' + self.FileName + '.txt'
         elif type == 'document' and method:
-            file = 'Annotationlist/'+method+'/HighlightAnnotation_'+self.FileName+'_'+method+'.txt'
+            file = 'Annotationlist/Original/' + method + '/HighlightAnnotation_' + self.FileName + '_' + method + '.txt'
         else:
             raise ValueError('arg \'method\' need be input')
 
         read_from_annotation = open(file, 'r')
-        #print(file)
+        # print(file)
         collection = []
         document = []
         time = ''
@@ -64,39 +64,39 @@ class TFIDF():
 
         return collection, time_serise
 
-
-
     def tfidf_construct(self, corpus):
         corpus2 = []
         for document in corpus:
             document2 = []
             for graph in document:
-                if len(graph)>0:
+                if len(graph) > 0:
                     for word in graph:
                         document2.append(word)
             corpus2.append(document2)
         dic = corpora.Dictionary(corpus2)
-        #print(dic.token2id)
+        # print(dic.token2id)
         corpus = [dic.doc2bow(text) for text in corpus2]
         # print(corpus)
 
-        tfidf_model = models.TfidfModel(corpus, wglobal=lambda *args: models.tfidfmodel.df2idf(*args, log_base=2.0, add=0.0))
+        tfidf_model = models.TfidfModel(corpus,
+                                        wglobal=lambda *args: models.tfidfmodel.df2idf(*args, log_base=2.0, add=0.0))
 
         return tfidf_model, dic
 
-
     def tfidf_weighting(self, documentset=[], dic=None):
         time_seriase.reverse()
-        WriteToTxt = open('Annotationlist/'+self.method+'/HighlightAnnotation_'+self.FileName+'_'+self.method+'_TFIDF.txt', 'w')
+        WriteToTxt = open(
+            'Annotationlist/Original/' + self.method + '/HighlightAnnotation_' + self.FileName + '_' + self.method + '_TFIDF.txt',
+            'w')
         for document in documentset:
-            document.insert(0, document[0]+document[2])
-            document.insert(1, document[2]+document[4])
+            document.insert(0, document[0] + document[2])
+            document.insert(1, document[2] + document[4])
         for documents in documentset:
             # print(documents)
             flag = 0
             time = time_seriase.pop()
-            #print(time)
-            WriteToTxt.writelines(time+'\n')
+            # print(time)
+            WriteToTxt.writelines(time + '\n')
             for document in documents:
                 # print(document)
                 count = 0
@@ -114,28 +114,28 @@ class TFIDF():
                         # print(dic[j[0]])
                         rankList.append((dic[j[0]], j[1]))
                     if flag % 6 == 0:
-                        #print('AllUser')
+                        # print('AllUser')
                         WriteToTxt.writelines('AllUser\n')
                     if flag % 6 == 2:
-                        #print('PowerUser')
+                        # print('PowerUser')
                         WriteToTxt.writelines('PowerUser\n')
                     if flag % 6 == 4:
-                        #print('NormalUser')
+                        # print('NormalUser')
                         WriteToTxt.writelines('NormalUser\n')
-                    #print(rankList)
+                    # print(rankList)
                     WriteToTxt.writelines(str(rankList))
-                    #print('')
+                    # print('')
                     WriteToTxt.writelines('\n\n')
                     flag += 1
         return 0
 
-if __name__ == '__main__':
 
+if __name__ == '__main__':
     tfidf = TFIDF('3_05')
     collection, time = tfidf.loading_document_set(type='collection')
     model, dic = tfidf.tfidf_construct(collection)
     documentset, time_seriase = tfidf.loading_document_set(type='document', method='HITS')
-    print(tfidf.FileName+' '+tfidf.method)
+    print(tfidf.FileName + ' ' + tfidf.method)
     print(time_seriase)
     tfidf.tfidf_weighting(documentset, dic)
 
@@ -208,4 +208,3 @@ if __name__ == '__main__':
     print(tfidf.FileName + ' ' + tfidf.method)
     print(time_seriase)
     tfidf.tfidf_weighting(documentset, dic)
-

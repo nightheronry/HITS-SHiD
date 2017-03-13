@@ -40,9 +40,9 @@ class extractHG():
     def extractAnnotaton(self, shift=0, exportfile=''):
         print(exportfile)
         if self.merged:
-            merged_directory = 'Original/'
-        else:
             merged_directory = 'Merge/'
+        else:
+            merged_directory = 'Original/'
 
 
         ReadFromAnnotation = open('Annotationlist/Annotationlist_'+self.FileName+'.txt', 'r')
@@ -132,12 +132,13 @@ if __name__ == '__main__':
     ex = extractHG('3_06')
     ex.timeModify([[58], [62], [59], [126], [184], [135], [54], [125], [55], [49], [63]])
     ex.extractAnnotaton(0, 'HITS')
-    ex.timeModify([[58, 59], [62, 63], [125, 126], [184], [135], [54, 55], [49]], 1)
+    #ex.timeModify([[58, 59], [62, 63], [125, 126], [184], [135], [54, 55], [49]], True)
+    ex.timeModify([[58, 59], [62, 63], [125, 126], [182], [135], [54, 55], [49]], True)
     ex.extractAnnotaton(0, 'HITS')
     # 58->37:20
-    ex.timeModify([[58], [62], [59], [184], [126], [48], [55], [135], [19], [54], [49], [51], [50], [63], [182]])
+    ex.timeModify([[58], [62], [59], [183], [125], [48], [55], [135], [19], [54], [49], [51], [50], [63], [182]])
     ex.extractAnnotaton(0, 'MT')
-    ex.timeModify([[58, 59], [62, 63], [184], [126], [48, 49, 50, 51], [54, 55], [135], [19], [182]], True)
+    ex.timeModify([[58, 59], [62, 63], [182], [125], [48, 49, 50, 51], [54, 55], [135], [19], [182]], True)
     ex.extractAnnotaton(0, 'MT')
 
     # 7_09

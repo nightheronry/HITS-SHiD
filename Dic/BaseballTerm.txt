@@ -210,7 +210,6 @@ Win Probability Added
 不合法投球
 不死三振
 世界排名
-中心打者
 中繼投手
 中繼王
 主場
@@ -278,9 +277,6 @@ Win Probability Added
 圈指變速球
 培訓隊
 場外全壘打
-壘包
-壘審
-壘打數
 滿壘
 犧牲打
 高飛犧牲打
@@ -321,7 +317,8 @@ Win Probability Added
 守護神
 守隊
 守隊球員
-安全
+下庄
+安全下庄
 安全上壘
 安全觸擊
 安打王
@@ -335,7 +332,6 @@ Win Probability Added
 封殺
 封殺行為
 對戰優質率
-少棒
 左右開弓
 左打者
 左投右打
@@ -353,8 +349,6 @@ Win Probability Added
 得點圈
 德州安打
 快速直球
-成人棒球
-成棒
 打帶跑
 打擊教練
 打擊王
@@ -380,7 +374,6 @@ Win Probability Added
 擊出
 本壘打
 打數
-打席
 三壘安打
 全壘打
 二壘安打
@@ -390,7 +383,6 @@ Win Probability Added
 擊出
 本壘打
 打數
-打席
 三壘安打
 滑壘
 撲壘
@@ -407,6 +399,7 @@ Win Probability Added
 捕逸
 暴傳
 失誤
+HR
 守備機會
 守備率
 守備範圍指數

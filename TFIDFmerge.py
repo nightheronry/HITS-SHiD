@@ -114,7 +114,8 @@ class TFIDF():
                         if count > 10:
                             break
                         # print(dic[j[0]])
-                        rankList.append((dic[j[0]], j[1]))
+                        # rankList.append((dic[j[0]], j[1]))
+                        rankList.append(dic[j[0]])
                     if flag % 6 == 0:
                         #print('AllUser')
                         WriteToTxt.writelines('AllUser\n')

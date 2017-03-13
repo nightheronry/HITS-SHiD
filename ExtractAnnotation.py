@@ -43,7 +43,7 @@ class ExtractAnnotation:
         for Player in ReadFromPDic2:
             if Player.rstrip() not in dicplayer:
                 dicplayer.append(Player.rstrip())
-        print(dicplayer)
+        # print(dicplayer)
         for term in ReadFromADic:
             dicterm.append(term.rstrip())
         for term in ReadFromADic2:
@@ -52,7 +52,7 @@ class ExtractAnnotation:
         # for Player in ReadFromADic3:
         #    if term.rstrip() not in dicterm:
         #        dicterm.append(Player.rstrip())
-        print(dicterm)
+        # print(dicterm)
         for Message in ReadFromTxt:
 
             MessageTemp = []
@@ -66,25 +66,25 @@ class ExtractAnnotation:
                 if TimeTemp != MessageTemp[0]:  # 判斷時間
 
                     # 寫出上一片段資料
-                    print(TimeTemp.rstrip())
+                    # print(TimeTemp.rstrip())
                     WriteToTxt.writelines(TimeTemp.rstrip() + '\n')
                     listset = [Aselectedplayer, Aselectedterm, Pselectedplayer, Pselectedterm, Nselectedplayer, Nselectedterm]
                     count = 0
                     for selectlist in listset:
                         sort = [(p, selectlist[p]) for p in sorted(selectlist, key=selectlist.get, reverse=True)]
                         if count == 0:
-                            print('AllUser:')
+                            # print('AllUser:')
                             WriteToTxt.writelines('Alluser\n')
                         elif count == 2:
-                            print('PowerUser:')
+                            # print('PowerUser:')
                             WriteToTxt.writelines('PowerUser\n')
                         elif count == 4:
-                            print('NormalUser:')
+                            # print('NormalUser:')
                             WriteToTxt.writelines('NormalUser\n')
                         count += 1
-                        print(sort)
+                        # print(sort)
                         WriteToTxt.writelines(str(sort) + '\n')
-                        print("")
+                        # print("")
                         WriteToTxt.writelines('\n')
                     # 重置紀錄表
                     TimeTemp = MessageTemp[0]
@@ -164,7 +164,7 @@ class ExtractAnnotation:
 
         ReadFromTxt.close()
         WriteToTxt.close()
-        print(self.FileName, "done!")
+        # print(self.FileName, "done!")
         return 0
 
     def PowerUser(self):
