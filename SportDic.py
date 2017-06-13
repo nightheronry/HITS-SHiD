@@ -10,9 +10,9 @@ class GetDic:
     def __init__(self):
         pass
 
-    def request(self, url, keyword):  # 這邊將ptt取回的html檔案,處理成純文字檔
+    def request(self, url, keyword):
 
-        resp = urllib.request.urlopen(url+"keyword="+urllib.request.quote(keyword)+"&lang=cht")  # 開啟網頁
+        resp = urllib.request.urlopen(url+"keyword="+urllib.request.quote(keyword)+"&lang=cht")  # open web
         encoding = resp.info().get_content_charset('utf-8')
         output = json.loads(resp.read().decode(encoding))
         return output

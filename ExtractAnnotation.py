@@ -11,7 +11,7 @@ class ExtractAnnotation:
         ReadFromTxt = open('WebDocuments/'+self.FileName+'.txt', 'r')
         WriteToTxt = open("Annotationlist/Annotationlist_" + self.FileName + '.txt', 'w')
         UserId = PowerUser
-        if str(self.FileName).split('_')[0] == '7':  # 若為3/5, 6 改成+2, 否則+1
+        if str(self.FileName).split('_')[0] == '7':  # if game is 3/5, chang 6 to +2, else to +1
             shift1 = 6
             shift2 = 6
             shift3 = 1
@@ -57,13 +57,14 @@ class ExtractAnnotation:
 
             MessageTemp = []
 
-            MessageTemp.append(Message[len(Message) - shift1:])  # 將"回文時間“存入Messagetemp[0]#若為3/5, 6 改成-6, 否則-5
+            MessageTemp.append(Message[len(Message) - shift1:])  # storage message timestamp into Messagetemp[0]
+                                                                 # if game is 3/5, changes 6 to -6, else to -5
             if TimeTemp == "":
                 TimeTemp = MessageTemp[0]
                 # print(MessageTemp[0])
                 pass
             else:
-                if TimeTemp != MessageTemp[0]:  # 判斷時間
+                if TimeTemp != MessageTemp[0]:  # time judgement
 
                     # 寫出上一片段資料
                     # print(TimeTemp.rstrip())
@@ -95,12 +96,12 @@ class ExtractAnnotation:
                     Nselectedplayer.clear()
                     Nselectedterm.clear()
 
-            MessageTemp.append(Message[:3])  # 將"推/噓狀態存入Messagetemp[1]
-            MessageTemp.append(Message[2:Message.find(":")])  # 將"ID"存入Messagetemp[2]
+            MessageTemp.append(Message[:3])  # storage state into Messagetemp[1]
+            MessageTemp.append(Message[2:Message.find(":")])  # storage "ID" into Messagetemp[2]
             MessageTemp.append(
-                Message[len(Message) - 11:len(Message) - shift2:])  # 將"日期"存入Messagetemp[3]#若為3/5, 6 改成-7, 否則-6
+                Message[len(Message) - 11:len(Message) - shift2:])  # storage "date" into Messagetemp[3]#if game is3/5, 6 to -7, else -6
             MessageTemp.append(
-                Message[Message.find(":") + shift3:len(Message) - 13:])  # 將"推文內容"存入Messagetemp[4]#若為3/5, 6 改成+2, 否則+1
+                Message[Message.find(":") + shift3:len(Message) - 13:])  # storage "commend" into Messagetemp[4]#if game is 3/5, 6 to +2, else +1
 
             for player in dicplayer:
                 player = player.lower()
@@ -119,9 +120,9 @@ class ExtractAnnotation:
                     else:
                         Aselectedterm[term] = count
 
-            if Message[2:Message.find(":")] in UserId:  # 為ＰＵ發言
+            if Message[2:Message.find(":")] in UserId:  # if commend from PU
                 # print("PU: ", Message[2:Message.find(":"), MessageTemp[4].strip().lower(), " in "+MessageTemp[0])
-                # 比對兩個詞庫 計算詞頻
+                # compare dictionary then count WF
 
                 for player in dicplayer:
                     player = player.lower()
